@@ -1,4 +1,4 @@
-package cn.net.liaowei.sc.order.domain;
+package cn.net.liaowei.sc.order.domain.dos;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -15,7 +16,8 @@ import java.util.Date;
 @Data
 @Entity
 @ApiModel("订单主要信息")
-public class OrderMaster {
+@Table(name="order_master")
+public class OrderMasterDO {
     @Id
     @ApiModelProperty("订单编号")
     private Integer orderMasterId;
