@@ -2,6 +2,8 @@ package cn.net.liaowei.sc.order.service;
 
 import cn.net.liaowei.sc.order.domain.dto.OrderDTO;
 
+import java.util.List;
+
 /**
  * @author LiaoWei
  */
@@ -15,15 +17,15 @@ public interface OrderService {
 
     /**
      * 删除订单
-     * @param orderMasterId 订单编号
-     * @return 删除的订单编号
+     * @param orderMasterIdList 订单编号列表
+     * @return 删除的订单编号列表
      */
-    String delete(String orderMasterId);
+    List<String> delete(List<String> orderMasterIdList);
 
     /**
      * 完结订单
-     * @param orderMasterId 订单编号
+     * @param orderMasterIdList 订单编号列表
      * @return 完结的订单编号
      */
-    String finish(String orderMasterId);
+    List<String> finish(List<String> orderMasterIdList);
 }

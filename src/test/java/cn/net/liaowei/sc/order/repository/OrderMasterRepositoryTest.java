@@ -21,7 +21,7 @@ public class OrderMasterRepositoryTest {
     @Test
     public void save() {
         OrderMasterDO orderMasterDO = new OrderMasterDO();
-        orderMasterDO.setOrderMasterId(1234567890);
+        orderMasterDO.setOrderMasterId("123456");
         orderMasterDO.setCustomerName("西丽丽");
         orderMasterDO.setCustomerIdType(Short.valueOf("0"));
         orderMasterDO.setCustomerIdNo("500235199901112345");

@@ -7,5 +7,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author LiaoWei
  */
 public interface OrderDetailRepository extends JpaRepository<OrderDetailDO, Integer>  {
-
 }

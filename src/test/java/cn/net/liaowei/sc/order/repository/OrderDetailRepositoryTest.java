@@ -21,9 +21,8 @@ public class OrderDetailRepositoryTest {
     @Test
     public void save() {
         OrderDetailDO orderDetailDO = new OrderDetailDO();
-        orderDetailDO.setOrderDetailId(123456);
-        orderDetailDO.setOrderMasterId(1234567890);
-        orderDetailDO.setOrderDetailAmount(new BigDecimal("50.02"));
+        orderDetailDO.setOrderDetailId("123456001");
+        orderDetailDO.setOrderMasterId("123456");
         orderDetailDO.setProductId(987654);
         orderDetailDO.setProductName("定期001型");
         orderDetailDO.setBuyAmount(new BigDecimal("25.01"));

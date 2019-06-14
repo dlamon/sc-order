@@ -20,13 +20,10 @@ import java.util.Date;
 public class OrderDetailDO {
     @Id
     @ApiModelProperty("子订单编号")
-    private Integer orderDetailId;
+    private String orderDetailId;
 
     @ApiModelProperty("主订单编号")
-    private Integer orderMasterId;
-
-    @ApiModelProperty("子订单总金额")
-    private BigDecimal orderDetailAmount;
+    private String orderMasterId;
 
     @ApiModelProperty("产品编号")
     private Integer productId;

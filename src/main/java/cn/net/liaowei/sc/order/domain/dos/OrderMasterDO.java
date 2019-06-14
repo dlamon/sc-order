@@ -20,7 +20,7 @@ import java.util.Date;
 public class OrderMasterDO {
     @Id
     @ApiModelProperty("订单编号")
-    private Integer orderMasterId;
+    private String orderMasterId;
 
     @ApiModelProperty("客户姓名")
     private String customerName;
