@@ -22,4 +22,8 @@ spring:
     show-sql: true
 swagger:
   enabled: true
-  base-package: cn.net.liaowei.sc.product
+  base-package: cn.net.liaowei.sc.order
+  title: "订单服务"
+  version: v0.0.1
+  host: "{{host}}:8086"
+

@@ -17,10 +17,6 @@ import java.util.List;
 @Data
 @ApiModel("订单数据转换对象")
 public class OrderDTO {
-    @ApiModelProperty("订单编号")
-    @NotNull(message = "订单编号不能为空")
-    private Integer orderMasterId;
-
     @ApiModelProperty("客户姓名")
     private String customerName;
 
