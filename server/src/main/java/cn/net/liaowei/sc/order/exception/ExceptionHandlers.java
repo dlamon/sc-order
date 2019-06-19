@@ -1,8 +1,8 @@
 package cn.net.liaowei.sc.order.exception;
 
-import cn.net.liaowei.sc.order.domain.vo.ResultVO;
 import cn.net.liaowei.sc.order.enums.ErrorEnum;
 import cn.net.liaowei.sc.order.util.ResultUtil;
+import cn.net.liaowei.sc.order.domain.vo.ResultVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;

@@ -1,18 +1,18 @@
 package cn.net.liaowei.sc.order.service.impl;
 
-import cn.net.liaowei.sc.order.client.ProductClient;
 import cn.net.liaowei.sc.order.domain.dos.OrderDetailDO;
 import cn.net.liaowei.sc.order.domain.dos.OrderMasterDO;
-import cn.net.liaowei.sc.order.domain.dto.DecreaseQuotaDTO;
 import cn.net.liaowei.sc.order.domain.dto.OrderDTO;
 import cn.net.liaowei.sc.order.domain.dto.OrderDetailDTO;
-import cn.net.liaowei.sc.order.domain.dto.ProductInfoDTO;
 import cn.net.liaowei.sc.order.enums.ErrorEnum;
 import cn.net.liaowei.sc.order.exception.SCException;
 import cn.net.liaowei.sc.order.repository.OrderDetailRepository;
 import cn.net.liaowei.sc.order.repository.OrderMasterRepository;
 import cn.net.liaowei.sc.order.service.OrderService;
 import cn.net.liaowei.sc.order.util.KeyUtil;
+import cn.net.liaowei.sc.product.client.ProductClient;
+import cn.net.liaowei.sc.product.common.DecreaseQuotaDTO;
+import cn.net.liaowei.sc.product.common.ProductInfoDTO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
