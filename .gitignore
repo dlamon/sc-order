@@ -1,8 +1,5 @@
 HELP.md
 /target/
-/client/target/
-/common/target/
-/server/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
