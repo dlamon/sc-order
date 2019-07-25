@@ -5,11 +5,8 @@ spring:
     consul:
       host: 192.168.99.103
       port: 8500
-      discovery:
-        enabled: true
-        instance-id: sc-order
     config:
       discovery:
         enabled: true
-        service-id: sc-config
+        service-id: config
       profile: dev
