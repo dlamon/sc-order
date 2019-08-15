@@ -2,6 +2,7 @@ package cn.net.liaowei.sc.order.controller;
 
 import cn.net.liaowei.sc.order.domain.dto.OrderDTO;
 import cn.net.liaowei.sc.order.domain.vo.ResultVO;
+import cn.net.liaowei.sc.order.enums.ErrorEnum;
 import cn.net.liaowei.sc.order.service.OrderService;
 import cn.net.liaowei.sc.order.util.ResultUtil;
 import io.swagger.annotations.Api;
@@ -30,9 +31,12 @@ public class OrderController {
 
     @PostMapping("/create")
     @ApiOperation("创建订单")
+//    @HystrixCommand(fallbackMethod = "fallback")
     public ResultVO<String> create(@Valid @RequestBody @ApiParam("订单数据") OrderDTO orderDTO) {
+//      throw new RuntimeException();
         String orderId = orderService.create(orderDTO);
         return ResultUtil.success(orderId);
+
     }
 
     @DeleteMapping("/delete")
@@ -45,5 +49,9 @@ public class OrderController {
     @ApiOperation("完结订单")
     public ResultVO<List<String>> finish(@RequestBody @NotNull(message="订单编号不能为空")  @ApiParam("订单编号") List<String> ids) {
         return ResultUtil.success(orderService.finish(ids));
+    }
+
+    private ResultVO<String> fallback(OrderDTO orderDTO) {
+        return ResultUtil.error(ErrorEnum.CREATE_ORDER_ERROR.getCode(), ErrorEnum.CREATE_ORDER_ERROR.getMessage());
     }
 }
