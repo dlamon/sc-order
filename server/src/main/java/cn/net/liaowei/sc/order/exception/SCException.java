@@ -1,14 +1,13 @@
 package cn.net.liaowei.sc.order.exception;
 
 import cn.net.liaowei.sc.order.enums.ErrorEnum;
-import com.netflix.hystrix.exception.HystrixBadRequestException;
 import lombok.Getter;
 
 /**
  * @author LiaoWei
  */
 @Getter
-public class SCException extends HystrixBadRequestException {
+public class SCException extends RuntimeException {
     private String code;
     private String message;
 
