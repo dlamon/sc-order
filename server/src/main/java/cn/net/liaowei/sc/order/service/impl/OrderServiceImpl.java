@@ -51,7 +51,11 @@ public class OrderServiceImpl implements OrderService {
         List<DecreaseQuotaDTO> decreaseQuotaDTOList = orderDTO.getOrderDetailDTOList().stream()
                 .map(e -> new DecreaseQuotaDTO(e.getProductId(), e.getBuyAmount()))
                 .collect(Collectors.toList());
-        productClient.decreaseQuota(decreaseQuotaDTOList);
+        try {
+            productClient.decreaseQuota(decreaseQuotaDTOList);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // 写主订单详情
         BigDecimal orderAmount = orderDTO.getOrderDetailDTOList().stream()

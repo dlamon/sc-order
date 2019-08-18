@@ -2,11 +2,8 @@ package cn.net.liaowei.sc.order.controller;
 
 import cn.net.liaowei.sc.order.domain.dto.OrderDTO;
 import cn.net.liaowei.sc.order.domain.vo.ResultVO;
-import cn.net.liaowei.sc.order.enums.ErrorEnum;
 import cn.net.liaowei.sc.order.service.OrderService;
 import cn.net.liaowei.sc.order.util.ResultUtil;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -31,15 +28,6 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-
-    // 测试一、单个接口设置HystrixCommand fallbackMethod
-    // @HystrixCommand(fallbackMethod = "createFallback")
-
-    // 测试二、超时配置
-    @HystrixCommand(fallbackMethod = "createFallback",
-            commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "300000")
-    })
     @PostMapping("/create")
     @ApiOperation("创建订单")
     public ResultVO<String> create(@Valid @RequestBody @ApiParam("订单数据") OrderDTO orderDTO) {
@@ -58,9 +46,5 @@ public class OrderController {
     @ApiOperation("完结订单")
     public ResultVO<List<String>> finish(@RequestBody @NotNull(message="订单编号不能为空")  @ApiParam("订单编号") List<String> ids) {
         return ResultUtil.success(orderService.finish(ids));
-    }
-
-    private ResultVO<String> createFallback(OrderDTO orderDTO) {
-        return ResultUtil.error(ErrorEnum.CREATE_ORDER_UNKNOW_ERROR.getCode(), ErrorEnum.CREATE_ORDER_UNKNOW_ERROR.getMessage());
     }
 }
