@@ -4,10 +4,7 @@ import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServl
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableFeignClients(basePackages = "cn.net.liaowei.sc.product.client")
 @EnableSwagger2Doc
 @ComponentScan(basePackages = "cn.net.liaowei.sc")
-@EnableHystrixDashboard
 public class ScOrderApplication {
 
     public static void main(String[] args) {
