@@ -2,10 +2,10 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     ​
-    <springProperty scope="context" name="graylogHost" source="logging.graylog.host" />
-    <springProperty scope="context" name="graylogPort" source="logging.graylog.port" />
-
+    <springProperty scope="context" name="graylogHost" source="logging.graylog.host"/>
+    <springProperty scope="context" name="graylogPort" source="logging.graylog.port"/>
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+
     <property name="LOG_FILE" value="${BUILD_FOLDER:-build}/${springAppName}"/>​
 
     <property name="LOG_PATTERN"
@@ -39,7 +39,7 @@
                 <pattern>${LOG_PATTERN}</pattern>
             </fullPatternLayout>
             <numbersAsString>false</numbersAsString>
-            <staticField>app_name:sc-order</staticField>
+            <staticField>app_name:${springAppName}</staticField>
             <staticField>os_arch:${os.arch}</staticField>
             <staticField>os_name:${os.name}</staticField>
             <staticField>os_version:${os.version}</staticField>
